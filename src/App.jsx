@@ -1,27 +1,35 @@
 import { useState } from 'react'
 import './styles/App.css'
-import { InputGeneral } from './components/InputGeneral'
-import { InputEducation } from './components/InputEducation'
-import { InputExperience } from './components/InputExperience'
+import { InputGeneral } from './components/input/InputGeneral.jsx'
+import { InputEducation } from './components/input/InputEducation.jsx'
+import { InputExperience } from './components/input/InputExperience.jsx'
+import { OutputGeneral } from './components/output/OutputGeneral.jsx'
+import { OutputEducation } from './components/output/OutputEducation.jsx'
+import { OutputExperience } from './components/output/OutputExperience.jsx'
 
 
 function App() {
 
 	return (
-		<main id='body'>
+		<>
+			<h1 id='title'>CV/Resume Builder</h1>
 
-			<h1>CV/Resume Builder</h1>
+			<main id='mainContent'>
 
-			<section id='input'>
-				<InputGeneral />
-				<InputEducation />
-				<InputExperience />
-			</section>
+				<section id='inputSect'>
+					<InputGeneral />
+					<InputEducation />
+					<InputExperience />
+				</section>
 
-			<section id='output'>
+				<section id='outputSect'>
+					<OutputGeneral />
+					<OutputEducation />
+					<OutputExperience />
+				</section>
 
-			</section>
-		</main>
+			</main>
+		</>
 	)
 }
 export default App

@@ -1,3 +1,8 @@
+/* for dev purposes, comment out when unneeded */
+* {
+  /* outline: 1px solid red; */
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -55,7 +60,8 @@ body {
 }
 
 #root {
-  width: 1126px;
+  /* width: 1126px; */
+  width: 1200px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;

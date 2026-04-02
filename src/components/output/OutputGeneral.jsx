@@ -1,10 +1,11 @@
 import { useState } from 'react'
 
-export function InputEducation() {
+export function OutputGeneral() {
     // const [person, setPerson] = useState(0);
-
+    
     return (
-        <div id='inputEducation'>
+        <div id='outputGeneral'>
+            output general placeholder
         </div>
     );
 }
