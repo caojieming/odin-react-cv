@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-export function OutputGeneral() {
-    // const [person, setPerson] = useState(0);
-    
+export function OutputGeneral({vals}) {
     return (
         <div id='outputGeneral'>
-            output general placeholder
+            <p>Name: {vals.name}</p>
+            <p>Email: {vals.email}</p>
+            <p>Phone #: {vals.phone}</p>
         </div>
     );
 }

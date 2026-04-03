@@ -9,6 +9,13 @@ import { OutputExperience } from './components/output/OutputExperience.jsx'
 
 
 function App() {
+	const initGeneral = {name: "", email: "", phone: ""};
+	const [general, setGeneral] = useState(initGeneral);
+
+	// function passed to InputGeneral, will call this on button click
+  	function updateGeneral(newVals) {
+		setGeneral(newVals);
+	}
 
 	return (
 		<>
@@ -17,13 +24,13 @@ function App() {
 			<main id='mainContent'>
 
 				<section id='inputSect'>
-					<InputGeneral />
+					<InputGeneral onSubmit={updateGeneral} />
 					<InputEducation />
 					<InputExperience />
 				</section>
 
 				<section id='outputSect'>
-					<OutputGeneral />
+					<OutputGeneral vals={general} />
 					<OutputEducation />
 					<OutputExperience />
 				</section>
