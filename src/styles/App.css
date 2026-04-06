@@ -1,18 +1,29 @@
 #title {
-    outline: 1px solid blue;
+    /* outline: 1px solid blue; */
 }
 
 #mainContent {
-    outline: 1px dotted white;
+    /* outline: 1px dotted white; */
     display: flex;
+    justify-content: space-between;
 }
 
-#inputSect {
-    outline: 1px solid green;
-    width: 40%;
+#inputSections {
+    border: 1px solid gray;
+    width: 35%;
+}
+.inputSection {
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
 }
 
-#outputSect {
-    outline: 1px solid red;
+#outputSections {
+    /* white background to simulate paper */
+    background-color: white;
+    /* black text */
+    color: black;
+
     width: 60%;
 }

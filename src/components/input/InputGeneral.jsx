@@ -6,30 +6,66 @@ export function InputGeneral({onSubmit}) {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
 
-    function handleSubmit() {
-        // sends all input vals up to parent
-        onSubmit({name, email, phone});
+    const [isReadOnly, setReadOnly] = useState(false);
+    const [btnText, setBtnText] = useState("Submit");
+
+
+    // submit/edit button use the same button
+    function handleSubmitEdit() {
+        // button text = Submit
+        if(btnText === "Submit") {
+            // default values
+            if(name === "" && email === "" && phone === "") {
+                const defName = "John Doe";
+                const defEmail = "johndoe@abc.xyz";
+                const defPhone = "123 456 7890";
+                setName(defName);
+                setEmail(defEmail);
+                setPhone(defPhone);
+                onSubmit({name: defName, email: defEmail, phone: defPhone});
+            }
+            else {
+                // sends all input vals up to parent
+                onSubmit({name, email, phone});
+            }
+
+            // set inputs to read only
+            setReadOnly(true);
+            // convert button text to "Edit"
+            setBtnText("Edit");
+        }
+
+        // button text = Edit
+        else {
+            // set inputs to write
+            setReadOnly(false);
+
+            // convert button text to "Submit"
+            setBtnText("Submit");
+        }
     }
 
     return (
-        <div id='inputGeneral'>
+        <div id='inputGeneral' className='inputSection'>
             <div className='name'>
-                <h2>Name:</h2>
+                <h2>Name</h2>
                 <input 
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder='Name goes here'
+                    placeholder="John Doe"
+                    readOnly={isReadOnly}
                 />
             </div>
 
             <div className='email'>
-                <h2>Email:</h2>
+                <h2>Email</h2>
                 <input 
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder='Email goes here'
+                    placeholder="johndoe@abc.xyz"
+                    readOnly={isReadOnly}
                 />
             </div>
 
@@ -39,11 +75,12 @@ export function InputGeneral({onSubmit}) {
                     type="text"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder='Phone goes here'
+                    placeholder="123 456 7890"
+                    readOnly={isReadOnly}
                 />
             </div>
 
-            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={handleSubmitEdit}>{btnText}</button>
         </div>
     );
 }

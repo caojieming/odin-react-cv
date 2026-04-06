@@ -23,13 +23,13 @@ function App() {
 
 			<main id='mainContent'>
 
-				<section id='inputSect'>
+				<section id='inputSections'>
 					<InputGeneral onSubmit={updateGeneral} />
 					<InputEducation />
 					<InputExperience />
 				</section>
 
-				<section id='outputSect'>
+				<section id='outputSections'>
 					<OutputGeneral vals={general} />
 					<OutputEducation />
 					<OutputExperience />
