@@ -1,11 +1,11 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 
-export function OutputEducation() {
-    // const [person, setPerson] = useState(0);
-    
+export function OutputEducation({vals}) {    
     return (
         <div id='outputEducation'>
-            output education placeholder
+            <p>School: {vals.school}</p>
+            <p>Degree: {vals.degree}</p>
+            <p>Date of Completion: {vals.date}</p>
         </div>
     );
 }

@@ -12,9 +12,17 @@ function App() {
 	const initGeneral = {name: "", email: "", phone: ""};
 	const [general, setGeneral] = useState(initGeneral);
 
+	// education may become a list in the future to accommodate multiple education entries
+	const initEducation = {school: "", degree: "", date: ""};
+	const [education, setEducation] = useState(initEducation);
+
 	// function passed to InputGeneral, will call this on button click
   	function updateGeneral(newVals) {
 		setGeneral(newVals);
+	}
+
+	function updateEducation(newVals) {
+		setEducation(newVals);
 	}
 
 	return (
@@ -25,13 +33,15 @@ function App() {
 
 				<section id='inputSections'>
 					<InputGeneral onSubmit={updateGeneral} />
-					<InputEducation />
+					<InputEducation onSubmit={updateEducation} />
 					<InputExperience />
 				</section>
 
 				<section id='outputSections'>
 					<OutputGeneral vals={general} />
-					<OutputEducation />
+					========================================================
+					<OutputEducation vals={education}/>
+					========================================================
 					<OutputExperience />
 				</section>
 

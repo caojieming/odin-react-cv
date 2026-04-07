@@ -4,7 +4,7 @@ export function InputExperience() {
     // const [person, setPerson] = useState(0);
 
     return (
-        <div id='inputExperience'>
+        <div id='inputExperience' className='inputSection'>
             input experience placeholder
         </div>
     );
