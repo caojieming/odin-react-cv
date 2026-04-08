@@ -8,6 +8,19 @@
     justify-content: space-between;
 }
 
+/* div containing submit or delete+submit buttons */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+/* .buttons .deleteBtn {
+    background-color: red;
+    border-radius: 4px;
+    border: 1px solid gray;
+} */
+
 #inputSections {
     border: 1px solid gray;
     width: 35%;

@@ -56,7 +56,13 @@ export function InputEducation({onSubmit}) {
                 />
             </div>
 
-            <button onClick={handleSubmit}>Submit</button>
+            <div className='buttons'>
+                <button className='deleteBtn'>Delete</button>
+                <button className='submitBtn' onClick={handleSubmit}>Submit</button>
+            </div>
+
+            <button id='addEducation'>Add extra Education</button>
+            
         </div>
     );
 }

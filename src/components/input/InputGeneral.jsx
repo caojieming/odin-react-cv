@@ -56,7 +56,9 @@ export function InputGeneral({onSubmit}) {
                 />
             </div>
 
-            <button onClick={handleSubmit}>Submit</button>
+            <div className='buttons'>
+                <button onClick={handleSubmit}>Submit</button>
+            </div>
         </div>
     );
 }

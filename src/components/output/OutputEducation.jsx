@@ -3,9 +3,14 @@
 export function OutputEducation({vals}) {    
     return (
         <div id='outputEducation'>
-            <p>School: {vals.school}</p>
-            <p>Degree: {vals.degree}</p>
-            <p>Date of Completion: {vals.date}</p>
+            {/* for each val in vals */}
+            {vals.map(val => (
+                <>
+                    <p>School: {val.school}</p>
+                    <p>Degree: {val.degree}</p>
+                    <p>Date of Completion: {val.date}</p>
+                </>
+            ))}
         </div>
     );
 }
