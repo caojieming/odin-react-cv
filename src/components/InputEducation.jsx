@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 
 export function InputEducation({data, onChange}) {
     // basically just gave data an alias of schoolList
@@ -18,11 +17,24 @@ export function InputEducation({data, onChange}) {
     }
 
     function deleteSchool(index) {
-
+        // simply delete the record at index from schoolList
+        const updatedList = [...schoolList];
+        updatedList.splice(index, 1);
+        onChange(updatedList);
     }
 
     function addSchool() {
+        // simply append a new blank record to schoolList
+        const newSchool = {
+            id: crypto.randomUUID(),
+            schoolName: "",
+            degree: "",
+            date: ""
+        };
 
+        const updatedList = [...schoolList];
+        updatedList.push(newSchool);
+        onChange(updatedList);
     }
 
 
@@ -34,7 +46,7 @@ export function InputEducation({data, onChange}) {
                 {
                 schoolList.map((school, index) => {
                     return (
-                        <div key={school.id}>
+                        <div key={school.id} className="school">
                             <h2>School Name</h2>
                             <input
                                 type="text"

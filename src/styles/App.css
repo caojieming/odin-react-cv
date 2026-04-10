@@ -8,24 +8,26 @@
     justify-content: space-between;
 }
 
-/* div containing submit or delete+submit buttons */
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-/* .buttons .deleteBtn {
-    background-color: red;
-    border-radius: 4px;
-    border: 1px solid gray;
-} */
-
 #inputSections {
     border: 1px solid gray;
     width: 35%;
 }
 .inputSection {
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+
+#inputEducation .schoolList,
+#inputExperience .expList {
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+#inputEducation .school,
+#inputExperience .exp {
     border: 2px solid white;
     border-radius: 10px;
     margin: 20px;

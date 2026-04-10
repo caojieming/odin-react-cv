@@ -10,7 +10,7 @@ export function Resume({data}){
                 <p>Email: {general.email}</p>
                 <p>Phone #: {general.phone}</p>
             </div>
-            =========================================
+            ========================================================
             <div id="outputEducation">
                 {education.map((school) => (
                     <div key={school.id}>
@@ -20,9 +20,17 @@ export function Resume({data}){
                     </div>
                 ))}
             </div>
-            =========================================
+            ========================================================
             <div id="outputExperience">
-                placeholder experience
+                {experience.map((exp) => (
+                    <div key={exp.id}>
+                        <p>Company: {exp.companyName}</p>
+                        <p>Position: {exp.position}</p>
+                        <p>Start Date: {exp.startDate}</p>
+                        <p>End Date: {exp.endDate}</p>
+                        <p>Summary: {exp.summary}</p>
+                    </div>
+                ))}
             </div>
         </div>
     );

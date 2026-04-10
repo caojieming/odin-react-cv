@@ -42,10 +42,14 @@ function App() {
 		setPerson(updatedGeneral);
 	}
 
-	// temp/placeholder for now, implement later
 	function updateEducation(newVals) {
 		const updatedEducation = {...person, education: newVals};
 		setPerson(updatedEducation);
+	}
+
+	function updateExperience(newVals) {
+		const updatedExperience = {...person, experience: newVals};
+		setPerson(updatedExperience);
 	}
 
 	return (
@@ -57,7 +61,7 @@ function App() {
 				<section id='inputSections'>
 					<InputGeneral data={person.general} onChange={updateGeneral} />
 					<InputEducation data={person.education} onChange={updateEducation} />
-					<InputExperience />
+					<InputExperience data={person.experience} onChange={updateExperience} />
 				</section>
 
 				<section id='outputSections'>
