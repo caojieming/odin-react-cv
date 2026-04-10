@@ -1,17 +1,14 @@
 import { useState } from 'react'
 import './styles/App.css'
-import { InputGeneral } from './components/input/InputGeneral.jsx'
-import { InputEducation } from './components/input/InputEducation.jsx'
-import { InputExperience } from './components/input/InputExperience.jsx'
-import { OutputGeneral } from './components/output/OutputGeneral.jsx'
-import { OutputEducation } from './components/output/OutputEducation.jsx'
-import { OutputExperience } from './components/output/OutputExperience.jsx'
-import { Resume } from './components/output/Resume.jsx'
+import { InputGeneral } from './components/InputGeneral.jsx'
+import { InputEducation } from './components/InputEducation.jsx'
+import { InputExperience } from './components/InputExperience.jsx'
+import { Resume } from './components/Resume.jsx'
 
 
 function App() {
-
-	const [person, setPerson] = useState({
+	const initPerson =
+	{
 		general: {
 			name: "",
 			email: "",
@@ -19,39 +16,36 @@ function App() {
 		},
 		education: [
 			{
-				school: "",
+				id: crypto.randomUUID(),
+				schoolName: "",
 				degree: "",
 				date: ""
 			}
 		],
 		experience: [
 			{
-				company: "",
+				id: crypto.randomUUID(),
+				companyName: "",
 				position: "",
-				stardDate: "",
+				startDate: "",
 				endDate: "",
 				summary: ""
 			}
 		]
-	});
+	};
+	const [person, setPerson] = useState(initPerson);
 
-	// const initGeneral = {name: "", email: "", phone: ""};
-	// const [general, setGeneral] = useState(initGeneral);
 
-	// education may become a list in the future to accommodate multiple education entries
-	// const initEducation = {school: "", degree: "", date: ""};
-	// const [education, setEducation] = useState([]);
-
-	// function passed to InputGeneral, will call this on button click
+	// function passed to InputGeneral, called when onChange is called up in InputGeneral
   	function updateGeneral(newVals) {
-		let tempGeneral = {...person, general: newVals};
-		setPerson(tempGeneral);
+		const updatedGeneral = {...person, general: newVals};
+		setPerson(updatedGeneral);
 	}
 
 	// temp/placeholder for now, implement later
 	function updateEducation(newVals) {
-		let tempGeneral = {...person, general: newVals};
-		setPerson(tempGeneral);
+		const updatedEducation = {...person, education: newVals};
+		setPerson(updatedEducation);
 	}
 
 	return (
@@ -61,19 +55,12 @@ function App() {
 			<main id='mainContent'>
 
 				<section id='inputSections'>
-					<InputGeneral onSubmit={updateGeneral} />
-					<InputEducation onSubmit={updateEducation} />
-					
+					<InputGeneral data={person.general} onChange={updateGeneral} />
+					<InputEducation data={person.education} onChange={updateEducation} />
 					<InputExperience />
-					<button id='addExperience'>Add extra Experience</button>
 				</section>
 
 				<section id='outputSections'>
-					{/* <OutputGeneral vals={person.general} />
-					========================================================
-					<OutputEducation vals={person.education}/>
-					========================================================
-					<OutputExperience /> */}
 					<Resume data={person} />
 				</section>
 
