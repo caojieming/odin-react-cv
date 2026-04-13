@@ -67,7 +67,6 @@ export function InputExperience({data, onChange}) {
                             <h2>Start Date</h2>
                             <input
                                 type="date"
-                                // placeholder=""
                                 value={exp.startDate}
                                 onChange={(e) => handleChange(index, "startDate", e.target.value)}
                             />
@@ -75,14 +74,12 @@ export function InputExperience({data, onChange}) {
                             <h2>End Date</h2>
                             <input
                                 type="date"
-                                // placeholder=""
                                 value={exp.endDate}
                                 onChange={(e) => handleChange(index, "endDate", e.target.value)}
                             />
 
                             <h2>Summary</h2>
-                            <input
-                                type="text"
+                            <textarea
                                 placeholder="I help people."
                                 value={exp.summary}
                                 onChange={(e) => handleChange(index, "summary", e.target.value)}

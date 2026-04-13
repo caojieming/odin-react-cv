@@ -7,38 +7,3 @@
     display: flex;
     justify-content: space-between;
 }
-
-#inputSections {
-    border: 1px solid gray;
-    width: 35%;
-}
-.inputSection {
-    border: 2px solid white;
-    border-radius: 10px;
-    margin: 20px;
-    padding: 20px;
-}
-
-#inputEducation .schoolList,
-#inputExperience .expList {
-    border: 2px solid white;
-    border-radius: 10px;
-    margin: 20px;
-    padding: 20px;
-}
-#inputEducation .school,
-#inputExperience .exp {
-    border: 2px solid white;
-    border-radius: 10px;
-    margin: 20px;
-    padding: 20px;
-}
-
-#outputSections {
-    /* white background to simulate paper */
-    background-color: white;
-    /* black text */
-    color: black;
-
-    width: 60%;
-}

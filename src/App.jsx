@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './styles/App.css'
+import './styles/Inputs.css'
+import './styles/Resume.css'
 import { InputGeneral } from './components/InputGeneral.jsx'
 import { InputEducation } from './components/InputEducation.jsx'
 import { InputExperience } from './components/InputExperience.jsx'

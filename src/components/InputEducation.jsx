@@ -66,8 +66,7 @@ export function InputEducation({data, onChange}) {
 
                             <h2>Completion Date</h2>
                             <input
-                                type="text"
-                                placeholder="May 1999"
+                                type="date"
                                 value={school.date}
                                 onChange={(e) => handleChange(index, "date", e.target.value)}
                             />

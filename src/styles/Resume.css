@@ -1,0 +1,44 @@
+#outputSections {
+    /* white background to simulate paper */
+    background-color: white;
+    /* black text */
+    color: black;
+
+    width: 60%;
+
+}
+
+#resume {
+    margin: 40px 30px;
+}
+
+#outputGeneral {
+}
+#outputGeneral .generalName {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+#outputGeneral .contactMethods {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+#outputEducation,
+#outputExperience {
+    text-align: left;
+    margin: 10px 30px;
+}
+#outputEducation .schoolItem:not(:last-child),
+#outputExperience .companyItem:not(:last-child) {
+    margin-bottom: 10px;
+}
+#outputEducation .educationSchool,
+#outputExperience .experienceCompany {
+    font-size: 20px;
+}
+
+#outputExperience .experienceSummary {
+    overflow-wrap: break-word;
+}

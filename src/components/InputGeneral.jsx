@@ -25,7 +25,7 @@ export function InputGeneral({data, onChange}) {
             <div className='email'>
                 <h2>Email</h2>
                 <input 
-                    type="text"
+                    type="email"
                     value={email}
                     onChange={(e) => handleChange("email", e.target.value)}
                     placeholder="johndoe@abc.xyz"
@@ -35,7 +35,7 @@ export function InputGeneral({data, onChange}) {
             <div className='phone'>
                 <h2>Phone</h2>
                 <input 
-                    type="text"
+                    type="tel"
                     value={phone}
                     onChange={(e) => handleChange("phone", e.target.value)}
                     placeholder="123 456 7890"
